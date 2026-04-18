@@ -20,15 +20,15 @@ final class PolishProfanityFilter
     private readonly array $dictionary;
     private readonly MaskerInterface $masker;
 
-    /** @param DictionaryProviderInterface[] $additionalDictionaries */
+    /** @param DictionaryProviderInterface[] $additionalDictionaryProviders */
     public function __construct(
         ?DictionaryProviderInterface $defaultDictionaryProvider = null,
-        array $additionalDictionaries = [],
+        array $additionalDictionaryProviders = [],
         ?SearchPatternInterface $searchPattern = null,
         ?MaskerInterface $masker = null,
     ) {
         $defaultDictionaryProvider ??= new DefaultDictionaryProvider();
-        $this->dictionary = $this->buildDictionary($defaultDictionaryProvider, $additionalDictionaries);
+        $this->dictionary = $this->buildDictionary($defaultDictionaryProvider, $additionalDictionaryProviders);
         $this->searchPattern = $searchPattern ?? new DefaultSearchPattern();
         $this->masker = $masker ?? new AsteriskMasker();
     }

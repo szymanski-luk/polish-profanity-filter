@@ -160,7 +160,7 @@ class PolishProfanityFilterTest extends TestCase
     {
         $filter = new PolishProfanityFilter(
             defaultDictionaryProvider: new FakeDictionaryProvider(['profanity']),
-            additionalDictionaries: [new FakeDictionaryProvider(['swear'])]
+            additionalDictionaryProviders: [new FakeDictionaryProvider(['swear'])]
         );
 
         self::assertTrue($filter->containsProfanity('This text contains swear.'));

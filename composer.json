@@ -1,0 +1,48 @@
+{
+  "name": "szymanski-luk/polish-profanity-filter",
+  "description": "Polish profanity filter with support for inflections, masking and detection",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "profanity",
+    "filter",
+    "polish",
+    "moderation",
+    "bad-words",
+    "nlp",
+    "przekleństwa"
+  ],
+  "authors": [
+    {
+      "name": "Łukasz Szymański"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "ext-mbstring": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "PolishProfanityFilter\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "PolishProfanityFilter\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.0",
+    "phpstan/phpstan": "^2.1",
+    "friendsofphp/php-cs-fixer": "^3.95",
+    "ext-dom": "*"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "scripts": {
+    "test": "phpunit",
+    "stan": "phpstan analyse",
+    "cs-check": "php-cs-fixer fix --dry-run --diff",
+    "cs-fix": "php-cs-fixer fix"
+  }
+}
